@@ -1,0 +1,53 @@
+
+<%- include("partials/header"); -%>
+
+<div class = "flex-container">
+    <div><h1>Todo</h1></div>
+    <div class="flex-icon">
+    <button onclick= <%= fName %> type="submit" id="" class="theme">
+    <span class="moon-icon"><img src="images/icon-moon.svg" alt="moon-icon"></span>
+    <span class="sun-icon"><img src="images/icon-sun.svg" alt="sun-icon"></span>
+    </button>
+    </div>
+    </div>
+    
+    
+    <!-- custom Checkbox -->
+    <div class="text-container"> 
+    <form  action="/" method="post">
+      
+      <input type="checkbox" class="rounded-checkbox" id="checkbox">
+      <label for="checkbox" class="indicator"></label>
+      <input type="text" name="info" id="" placeholder="Create a new todo.." autocomplete="off">
+    
+      <button type="submit">add</button>
+    </form>
+    </div>
+    
+    <div class="box">
+
+        <% for( var i=0; i<todoLists.length; i++){ %>
+           
+          <div class="text-container item">
+            
+                <input type="checkbox" id="<%= todoLists[i] %>">
+                <label for="<%= todoLists[i] %>" class="indicator la-decor"></label>
+                <p class="strikethrough"><%= todoLists[i] %></p>
+                <button type="submit" id="delete<%=i%>" value= "<%= todoLists[i] %>" class="del-btn theme"><img src="images/icon-cross.svg" alt="cross-icon"></button>
+        </div>
+       <% }%>
+     
+    <p>
+    <a class="box-link bl"><%= noOfTodoLists %> items left</a></li>
+    <a href="" class="box-link1">All</a>
+    <a href="" class="box-links bl">Active</a> 
+    <a href="" class="box-links bl">Completed</a>
+    <a href="" class="box-link4 bl">Clear Completed</a></p>
+    
+    </div>
+    
+    <div class="attributions">
+      Drag and drop to reorder list
+    </div>
+
+    <%- include("partials/footer"); -%>

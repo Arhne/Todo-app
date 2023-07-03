@@ -1,0 +1,30 @@
+<div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Ann Nwosu<span> of Whipped Web</span></a>.
+  </div>
+
+</div>
+
+<script>
+//loads the DOM page
+if (localStorage.getItem("isDarkMode") === 'true') {
+    document.body.classList.add("dark");
+} 
+
+function darkMode() { 
+document.body.classList.toggle("dark"); 
+localStorage.setItem("isDarkMode", true);
+
+  
+} 
+  
+  // Another way of doing it:
+  let delBtn= document.getElementByClassName("del-btn")
+  for (var i =0; i<delBtn.length; i++){
+  delBtn[i].onclick=function(){
+  this.parentElement.style.display = "none";
+  }}
+</script>
+
+</body>
+</html>
